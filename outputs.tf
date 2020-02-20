@@ -1,5 +1,7 @@
 #
 # Outputs
+#   Kube
+#   ELK
 #
 
 locals {
@@ -56,4 +58,13 @@ output "config_map_aws_auth" {
 
 output "kubeconfig" {
   value = local.kubeconfig
+}
+
+# ELK Outputs
+output "ElasticSearch_Endpoint" {
+  value = aws_elasticsearch_domain.es.endpoint
+}
+
+output "ElasticSearch-Kibana_Endpoint" {
+  value = aws_elasticsearch_domain.es.kibana_endpoint
 }
